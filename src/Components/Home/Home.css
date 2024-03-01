@@ -1,0 +1,114 @@
+ /* Homepage.css */
+ .banner {
+   /* background-image: url("/public/Images/download.jpeg"); */
+   height: 20vh !important;
+   background-size: cover;
+   background-repeat: no-repeat;
+   width: 100% !important;
+   /* border-radius: 8px 8px !important; */
+ }
+
+ .banner1 {
+   background-color: #ffc107 !important;
+   height: 10vh !important;
+   background-size: cover;
+   background-repeat: no-repeat;
+   width: 100% !important;
+   border-radius: 10px !important;
+ }
+
+ /* trending corousel */
+ .slick-dots {
+   position: absolute;
+   bottom: 4rem !important;
+   display: block;
+   width: 100%;
+   padding: 0;
+   margin: 0;
+   color: #fff !important;
+   list-style: none;
+   text-align: center;
+   /* background-color: #transparent; */
+ }
+
+ .slide-img {
+   height: 100%;
+   width: 100%;
+   aspect-ratio: 16/9 !important;
+   border-radius: 8px !important;
+   margin: 2px;
+ }
+
+ .slide-img1 {
+   height: 100%;
+   width: 100%;
+   aspect-ratio: 1/1 !important;
+   /* border-radius: 8px !important; */
+   margin: 2%;
+ }
+ .slide-img2 {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 9/16 !important;
+  /* border-radius: 8px !important; */
+  margin: 2px;
+}
+.slide-img3 {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16/9 !important;
+  /* border-radius: 8px !important; */
+  margin: 2px;
+}
+ /*
+ /* mobileview */
+
+ @media (max-width: 767px) {
+   .slide-img {
+
+     aspect-ratio: 1/1 !important;
+     padding: 20px;
+     border-radius: 25px !important;
+
+   }
+
+   .slide-img1 {
+     height: 90%;
+     width: 90%;
+     aspect-ratio: 1/1 !important;
+     /* border-radius: 20px !important; */
+     padding: 8%;
+   }
+   .slide-img2 {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 9/16 !important;
+    /* border-radius: 8px !important; */
+    margin: 2px;
+  }
+  .slide-img3 {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 16/9 !important;
+    /* border-radius: 8px !important; */
+    
+  }
+ }
+
+ /* ArticlePage.css */
+ .article-img{
+    aspect-ratio: 1/1 !important;
+    margin: 2px;
+ }
+ .art-card{
+  background-color:#e0d4e263;
+ }
+ /* category */
+ .cbanner {
+   background-image: url("/public/Images/download.jpeg"); 
+  height: 20vh !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100% !important;
+  /* border-radius: 8px 8px !important; */
+}

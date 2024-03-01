@@ -1,0 +1,163 @@
+a {
+      text-decoration: none !important;
+      color: #afb1b4 !important;
+
+}
+h1{
+      font-size: 18px !important;
+      font-weight: bold;
+}
+* {
+      font-family: 'Poppins', sans-serif;
+}
+
+/* login */
+
+.loginbtn {
+      background-color: #b3298d !important;
+      border: 1px solid #b3298d !important;
+
+}
+
+.loginbtn:active {
+      background-color: #FFFF00 !important;
+      border: 1px solid #152269 !important;
+}
+
+/* sidebar */
+.active {
+
+      color: #000000 !important;
+      background-color: #ffff !important;
+      padding: 6px;
+      border-radius: 1px !important;
+
+
+}
+
+.dropdown-menu[data-bs-popper] {
+      top: 100%;
+      left: -120px !important;
+      /* margin-top: var(--bs-dropdown-spacer); */
+}
+
+.navbar-nav {
+      height: 30px !important;
+      width: 40px !important;
+      background-color: aliceblue;
+      align-items: center;
+      border-radius: 2px;
+}
+
+.bar {
+      background-color: #ffffff;
+      height: 30px !important;
+      width: 30px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2px;
+
+}
+
+
+@media (max-width: 767px) {
+      .overflow-auto {
+            overflow: auto;
+            /* or any other desired overflow property */
+      }
+
+      .mainimg {
+            height: 100%;
+            width: 100%;
+            aspect-ratio: 1/1;
+      }
+
+      .mainvideo {
+            height: 100%;
+            width: 100%;
+            aspect-ratio: 1/1;
+      }
+}
+
+
+.header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      /* Ensure the header is above other content */
+}
+
+.content {
+  
+      /* Adjust according to your header's height */
+      overflow-y: auto;
+      /* Enable vertical scrolling */
+      height: 100vh;
+      /* Adjust for the header's height */
+   
+}
+.content::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+/* Ensure content is scrollable only if it exceeds the viewport height */
+@media (min-height: 768px) {
+      .content {
+            height:100vh;
+      }
+}
+
+
+/* sidebar mobile functionality */
+.sidebar-open {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px; /* Adjust width as needed */
+      height: 100%;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      transform: translateX(0);
+    }
+    
+    .sidebar-closed {
+      position: fixed;
+      top: 0;
+      left: -250px; /* Adjust negative value according to sidebar width */
+      width: 250px; /* Adjust width as needed */
+      height: 100%;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      transform: translateX(0);
+    }
+    
+    @media (min-width: 768px) {
+      .sidebar-open {
+        transform: translateX(0);
+      }
+    
+      .sidebar-closed {
+        transform: translateX(-250px); /* Adjust negative value according to sidebar width */
+      }
+    }
+    
+    input{
+      border: 0.1px solid #000000 !important;
+    }
+    textarea{
+      border: 0.1px solid #000000 !important;
+    }
+    select{
+      border: 0.1px solid #000000 !important;
+    }
+    .card{
+      border: 1px solid #dab4b4 !important;
+    }
+    .row>* {
+    
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+    }
