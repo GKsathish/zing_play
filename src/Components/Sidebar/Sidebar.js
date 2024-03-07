@@ -45,13 +45,10 @@ const Sidebar = () => {
     },
     {
       title: "Home",
-      path: "/Home",
+      path: "24",
       icon: <i className="bi bi-house mx-2"></i>,
-      cName: location.pathname === "/Home" ? "nav-text active" : "nav-text",
-      submenus: [
-        { title: "Category", path: "/Category" },
-        { title: "Article", path: "/Article" },
-      ],
+      cName: location.pathname === "24" ? "nav-text active" : "nav-text",
+     
     },
 
     {

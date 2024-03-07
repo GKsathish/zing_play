@@ -1,142 +1,178 @@
-// import React from "react";
-// import "./Home.css";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import './Home.css';
 
-// const Category = () => {
-//   return (
-//     <div className="container-fluid">
-//       <div className="row">
-//         <div className="col ">
-//           <div className="d-flex justify-content-start my-2  ">
-//             <span className="h-40 w-40 ms-4">
-//               <i class="bi bi-arrow-left-circle-fill h-40 w-40 me-3"></i>
-//             </span>
-//             <h1>Suggested</h1>
-//           </div>
-//           <div className="d-flex  justify-content-evenly  flex-wrap">
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att1.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att2.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>{" "}
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att3.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>{" "}
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att4.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>{" "}
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att5.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att6.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att1.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att2.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>{" "}
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att3.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>{" "}
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att4.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>{" "}
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att5.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>
-//             <figure className="m-2">
-//               <img
-//                 src="./Images/att6.jpeg"
-//                 alt="categoryimage"
-//                 className="p-1 "
-//               />
-//             </figure>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+const Category = ({ apiData }) => {
+  const { category, id } = useParams();
+  // Function to calculate padding-bottom based on aspect ratio
+  // const apiData = {
+  //   heading: "Suggested",
+  //   items: [
+  //     {
+  //       id: 1,
+  //       imageUrl: "./Images/att1.jpeg",
 
-// export default Category;
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 2,
+  //       imageUrl: "./Images/att2.jpeg",
 
-import React from "react";
-import "./Home.css";
-import {Link} from "react-router-dom";
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att3.jpeg",
 
-const Category = () => {
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att3.jpeg",
+
+  //       aspectRatio: "1:1",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att3.jpeg",
+
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att6.jpeg",
+
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att3.jpeg",
+
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att5.jpeg",
+
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att4.jpeg",
+
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att3.jpeg",
+
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att5.jpeg",
+
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     {
+  //       id: 3,
+  //       imageUrl: "./Images/att6.jpeg",
+
+  //       aspectRatio: "16:9",
+  //       articleUrl: "/article",
+  //       type: "image",
+  //     },
+  //     // Add more objects as needed
+  //   ],
+  // };
+
+  const [contentlist, setContentList] = useState([]);
+
+  useEffect(() => {
+    // Filter contentList based on category_id and id
+    const filteredContent = apiData.categoryList.find(
+      (categoryItem) => categoryItem.category_id === parseInt(id)
+    );
+    console.log(filteredContent);
+    setContentList(filteredContent);
+  }, [apiData, category, id]);
+
+  console.log(contentlist);
+  console.log(apiData, category, id);
+
   return (
     <div className="container-fluid">
-      <div className="row ">
-        <div className="col ">
-        <section>
-            <figure className="cbanner mb-3">
-             {/* <img src="./Images/att1.jpeg" alt="banner" /> */}
+      <div className="row">
+        <div className="col">
+          <section>
+            <figure>
+              <img
+                src={apiData.purchase_service_logo}
+                alt="banner"
+                className="banner "
+              />
             </figure>
-        </section>
+          </section>
           <div className="d-flex justify-content-start my-2">
             <span className="h-40 w-40 ms-2">
-             <Link to="/Home"><i className="bi bi-arrow-left-circle-fill h-40 w-40 mx-2"></i></Link> 
+              <Link to={`/${apiData.service_id}`}>
+                {/* <i className="bi bi-arrow-left-circle-fill h-40 w-40 mx-2"></i> */}
+                <i className="bi bi-arrow-left text-dark fs-2 fw-bold mx-2 "></i>
+              </Link>
             </span>
-            <h1>Suggested</h1>
+            <h1 className="my-2">{contentlist && contentlist.category_name}</h1>
           </div>
-          <div className="d-flex justify-content-evenly flex-wrap">
-            {Array.from({ length: 20 }, (_, index) => (
-              <figure key={index}  style={{ maxWidth: "50%" }}>
-                <img
-                  src={`./Images/att${(index % 6) + 1}.jpeg`}
-                  alt="categoryimage"
-                  className="p-1"
-                  style={{ width: "100%" }}
-                />
-              </figure>
-            ))}
+          {/* Display the category name */}
+
+        
+          <div className="row m-2">
+            {/* Map through contentList and render each item */}
+            {contentlist &&
+              contentlist.contentList &&
+              contentlist.contentList.map((item) => (
+                <div className="col-md-4 col-lg-4 col-sm-3" key={item.id}>
+                  <Link to={`/content/${contentlist.category_name}/${item.id}`}>
+                    <img
+                      src={item.previewImage}
+                      alt={item.name}
+                      className={
+                        contentlist.category_layout === "square"
+                          ? "slide-img1c p-1"
+                          : contentlist.category_layout === "Rectangle"
+                          ? "slide-img3c p-1"
+                          : contentlist.category_layout === "invert-Rectangle"
+                          ? "slide-img2c p-1"
+                          : contentlist.category_layout === "border-square"
+                          ? "slide-img p-3"
+                          : ""
+                      }
+                    />
+                  </Link>
+                </div>
+              ))}
           </div>
         </div>
       </div>
