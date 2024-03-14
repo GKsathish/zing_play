@@ -2,19 +2,19 @@
     {
         "title": "Dashboard",
         "path": "/",
-        "icon": "bi-house-fill",
-        "childrens": []
+        "icon": "bi-house-fill mx-1"
+      
     },
     {
         "title": "Home",
-        "path": "/Admin",
-        "icon": "bi-house-fill",
-        "childrens": []
+        "path": "24",
+        "icon": "bi-house-fill mx-1"
+       
     },
     {
         "title": "Service Management",
         "path": "/Admin",
-        "icon": "bi-camera-video",
+        "icon": "bi-camera-video mx-1",
         "childrens": [
             {
                 "title": "ServiceConfiguration",
@@ -40,19 +40,19 @@
     {
         "title": "User Management",
         "path": "/",
-        "icon": "bi-file-earmark-image",
+        "icon": "bi-file-earmark-image mx-1",
         "childrens": []
     },
     {
         "title": "Channel Management",
         "path": "/usercreation",
-        "icon": "bi-quote",
+        "icon": "bi-quote mx-1",
         "childrens": []
     },
     {
         "title": "Promotion Management",
         "path": "/AddPost",
-        "icon": "bi-newspaper",
+        "icon": "bi-newspaper mx-1",
         "childrens": [
             {
                 "title": "Post",

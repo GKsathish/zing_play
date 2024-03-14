@@ -77,8 +77,10 @@ const cleanedServiceId = pathname.substring(1);
     <>
       <div className="d-flex vh-100 p-0 m-0">
       {isLoggedIn && (
+      
           <div className={toggleed ? "d-none" : "w-auto h-auto"}>
-            <Sidebar />
+            <Sidebar/>
+           
           </div>
         )}
         <div className="col-lg col-md col-sm overflow-auto position-sticky">
