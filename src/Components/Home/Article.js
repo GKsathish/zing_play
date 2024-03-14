@@ -32,8 +32,8 @@ const ArticlePage = ({ apiData }) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col">
-          <div className="card art-card">
+        <div className="col maincontainer">
+          <div className="card art-card maincontainer">
             <section className="opacity-25">
               <figure>
                 <img

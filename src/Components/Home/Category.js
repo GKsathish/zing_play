@@ -126,7 +126,7 @@ const Category = ({ apiData }) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col">
+        <div className="col maincontainer">
           <section>
             <figure>
               <img
@@ -153,7 +153,7 @@ const Category = ({ apiData }) => {
             {contentlist &&
               contentlist.contentList &&
               contentlist.contentList.map((item) => (
-                <div className="col-md-4 col-lg-4 col-sm-3" key={item.id}>
+                <div className="col-6 col-md-4 col-lg-4" key={item.id}>
                   <Link to={`/content/${contentlist.category_name}/${item.id}`}>
                     <img
                       src={item.previewImage}

@@ -16,6 +16,9 @@ import EditPost from "./Components/Posts/EditPost";
 import View from "./Components/Posts/View";
 import Admin from "./Components/Posts/Admin";
 import Sidebar from "./Components/Sidebar/Sidebar";
+import Servicecreation from "./Components/ServiceManagement/Servicecreation";
+import Serviceedit from "./Components/ServiceManagement/Serviceedit";
+import Serviceplan from "./Components/ServiceManagement/Serviceplan";
 
 
 
@@ -35,7 +38,8 @@ const cleanedServiceId = pathname.substring(1);
       try {
         const response = await fetch(
           // "http://151.51.71.71:2026/portal/get-plan-page",
-          "http://151.51.71.71:2026/portal/get-plan-page",
+          // "http://151.51.71.71:2026/portal/get-plan-page",
+          "https://stochos.speedpayplus.com:1234/paymentv2/zing-planpage",
           {
             method: "POST",
             headers: {
@@ -95,6 +99,9 @@ const cleanedServiceId = pathname.substring(1);
                   <Route path="/EditPost" element={<EditPost />} />
                   <Route path="/View" element={<View />} />
                   <Route path="/Admin" element={<Admin />} />
+                  <Route path="/servicecreation" element={<Servicecreation />} />
+                  <Route path="/serviceedit" element={<Serviceedit />} />
+                  <Route path="/serviceplan" element={<Serviceplan/>} />
                   <Route path="/usercreation" element={<UserCreation />} />
                   <Route path="/:serviceid" element={<Home  apiData={apiData} />} />
                   <Route path="/content/:category/:id" element={<Article apiData={apiData} />} />

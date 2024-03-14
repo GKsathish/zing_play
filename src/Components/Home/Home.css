@@ -1,6 +1,5 @@
  /* Homepage.css */
  .banner {
-   /* background-image: url("/public/Images/download.jpeg"); */
    height: 20vh !important;
    background-size: cover;
    background-repeat: no-repeat;
@@ -10,11 +9,10 @@
 
  .banner1 {
    background-color: #ffc107 !important;
-   height: 10vh !important;
    background-size: cover;
    background-repeat: no-repeat;
    width: 100% !important;
-    border-radius: 10px !important; 
+  border-radius: 10px !important; 
  }
 
  /* trending corousel */
@@ -35,8 +33,9 @@
    height: 100%;
    width: 100%;
    aspect-ratio: 16/9;
-   border-radius: 20px !important;
-    margin: 0px !important; 
+   border-radius: 0px 0px 20px 20px !important;
+ 
+  
  }
 
  .slide-img1 {
@@ -44,7 +43,10 @@
    width: 100%;
    aspect-ratio: 1/1 !important;
    /* border-radius: 8px !important; */
+
    margin: 2%;
+   object-fit: cover; /* Scale the image to cover the container */
+
  }
 
  .slide-img2 {
@@ -53,6 +55,8 @@
    aspect-ratio: 9/16 !important;
    /* border-radius: 8px !important; */
    margin: 2px;
+   object-fit: cover; /* Scale the image to cover the container */
+
  }
 
  .slide-img3 {
@@ -61,6 +65,8 @@
    aspect-ratio: 16/9 !important;
    /* border-radius: 8px !important; */
    margin: 2px;
+   object-fit: cover; /* Scale the image to cover the container */
+
  }
 
  /*
@@ -71,15 +77,20 @@
      height: 100%;
      width: 100%;
      aspect-ratio: 1/1 !important;
+      border-radius: 0px 0px 20px 20px !important;
+      padding: 2px !important;
+      object-fit: cover; /* Scale the image to cover the container */
 
    }
 
    .slide-img1 {
-     height: 90%;
-     width: 90%;
+     height: 100%;
+     width: 100%;
      aspect-ratio: 1/1 !important;
      /* border-radius: 20px !important; */
-     padding: 8%;
+     padding: 2px ;
+     object-fit: cover; /* Scale the image to cover the container */
+
    }
 
    .slide-img2 {
@@ -87,8 +98,10 @@
      width: 100%;
      aspect-ratio: 9/16 !important;
      /* border-radius: 8px !important; */
+    
+     padding: 2px ;
+     object-fit: cover; /* Scale the image to cover the container */
 
-     padding: auto;
 
    }
 
@@ -97,7 +110,9 @@
      width: 100%;
      aspect-ratio: 16/9 !important;
      /* border-radius: 8px !important; */
-     padding: auto;
+     padding: 2px ;
+     object-fit: cover; /* Scale the image to cover the container */
+
 
    }
  }
@@ -106,15 +121,17 @@
  .article-img {
    aspect-ratio: 1/1 !important;
    margin: 2px;
+   object-fit: fit; /* Scale the image to cover the container */
+
  }
 
- .art-card {
+ /* .art-card {
    background-color: #e0d4e263;
- }
+ } */
 
  /* category */
  .cbanner {
-   background-image: url("/public/Images/download.jpeg");
+   /* background-image: url("/public/Images/download.jpeg"); */
    height: 20vh !important;
    background-size: cover;
    background-repeat: no-repeat;
@@ -135,7 +152,11 @@
    border-radius: 8px !important;
    aspect-ratio: 1/1 !important;
    /* padding: 20px; */
-   border-radius: 25px !important;
+   /* border-radius: 25px  !important; */
  }
  /* category page css */
 
+.arow{
+  height:35px !important;
+  width:35px !important;
+}

@@ -15,22 +15,32 @@ import { Link } from "react-router-dom";
 // Define the Home component
 const Home = ({ apiData }) => {
   // Responsive settings for carousels
-  
 
   const responsive = {
-    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 4, slidesToSlide: 4 },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 4,
+    },
     tablet: { breakpoint: { max: 1024, min: 464 }, items: 2, slidesToSlide: 2 },
-    mobile: { breakpoint: { max: 464, min: 0 }, items: 2, slidesToSlide: 2 } // Change items to 2 for all categories except explore
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 2, slidesToSlide: 2 }, // Change items to 2 for all categories except explore
   };
 
   const responsiveForExplore = {
-    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 4, slidesToSlide: 4 },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 4,
+    },
     tablet: { breakpoint: { max: 1024, min: 464 }, items: 3, slidesToSlide: 2 },
-    mobile: { breakpoint: { max: 464, min: 0 }, items: 3, slidesToSlide: 3 } // Change items to 3 for mobile view for explore
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 3, slidesToSlide: 3 }, // Change items to 3 for mobile view for explore
   };
 
   const getCategoryResponsive = (category) => {
-    if (category.category_layout === "square" || category.category_layout === "invert-Rectangle") {
+    if (
+      category.category_layout === "square" ||
+      category.category_layout === "invert-Rectangle"
+    ) {
       return responsiveForExplore;
     } else {
       return responsive;
@@ -53,9 +63,9 @@ const Home = ({ apiData }) => {
 
   // Render the component
   return (
-    <div className="container-fluid">
-      <div className="row bg-light border-1 shadow ">
-        <div className="col-12">
+    <div className="container-fluid ">
+      <div className="row bg-light border-1 shadow  ">
+        <div className="col-12 maincontainer overflow-x-hidden">
           {/* Check if apiData has been populated */}
           {Object.keys(apiData).length > 0 && (
             <>
@@ -89,18 +99,15 @@ const Home = ({ apiData }) => {
               {/* Render categories if present */}
               {apiData.categoryList &&
                 apiData.categoryList.map((category, index) => (
-                  <section key={index} className="my-3">
-                    <div>
-                      <div className="d-flex justify-content-between align-items-center mx-2">
-                        <h1 className="text-center">{category.category_name}</h1>
-                        <span className="h-30 w-30">
-                          <Link
-                            to={`/category/${category.category_name}/${category.category_id}`}
-                          >
-                           <i className="bi bi-arrow-right text-dark fs-2 fw-bold"></i>
-                          </Link>
-                        </span>
-                      </div>
+                  <>
+                    <section key={index} >
+                      <small className="d-flex justify-content-between align-items-center">
+                        {category.category_layout === "border-square" && (
+                          <h1 className="text-center ps-1">
+                            {category.category_name}
+                          </h1>
+                        )}
+                      </small>
                       {category.category_layout === "border-square" &&
                         category.contentList.length > 0 && (
                           // <AwesomeSlider className="bg-light ">
@@ -120,39 +127,65 @@ const Home = ({ apiData }) => {
                           // </AwesomeSlider>
 
                           <Slider {...settings}>
-                            {category.contentList.slice(0,12).map((item, index) => (
-                              <div key={item.id} className="p-3">
-                                <Link
-                                  to={`/content/${category.category_name}/${item.id}`}
-                                >
-                                  <img
-                                    src={item.previewImage}
-                                    className="slide-img p-1"
-                                    alt={item.name}
-                                  />
-                                </Link>
-                              </div>
-                            ))}
+                            {category.contentList
+                              .slice(0, 12)
+                              .map((item, index) => (
+                                <div key={item.id} className="">
+                                  <Link
+                                    to={`/content/${category.category_name}/${item.id}`}
+                                  >
+                                    <img
+                                      src={item.previewImage}
+                                      className="slide-img image-with-shadow"
+                                      alt={item.name}
+                                    />
+                                  </Link>
+                                </div>
+                              ))}
                           </Slider>
                         )}
+                    </section>
+                   <section className="my-2">
+                    
+                   <span className="d-flex justify-content-between align-items-center">
                       {category.category_layout !== "border-square" && (
-                        <Carousel
-                          swipeable={true}
-                          draggable={true}
-                          // responsive={responsive}
-                          responsive={getCategoryResponsive(category)} // Apply different responsive settings based on category
-                          ssr={true}
-                          infinite={true}
-                          autoPlay={true}
-                          autoPlaySpeed={3000}
-                          keyBoardControl={true}
-                          customTransition="all .8"
-                          transitionDuration={3000}
-                          containerClass="carousel-container"
-                          removeArrowOnDeviceType={["tablet", "mobile"]}
-                          itemClass="carousel-item-padding-40-px"
-                        >
-                          {category.contentList.slice(0,12).map((content, idx) => (
+                        <>
+                          <h1 className="text-center ps-1">
+                            {category.category_name}
+                          </h1>
+                          <Link
+                            to={`/category/${category.category_name}/${category.category_id}`}
+                          >
+                            {/* <i className="bi bi-arrow-right text-dark fs-2 fw-bold"></i> */}
+                            <img
+                              className="arow"
+                              src="./arrow.png"
+                              alt="next"
+                            />
+                          </Link>
+                        </>
+                      )}
+                    </span>
+                    {category.category_layout !== "border-square" && (
+                      <Carousel
+                        swipeable={true}
+                        draggable={true}
+                        // responsive={responsive}
+                        responsive={getCategoryResponsive(category)} // Apply different responsive settings based on category
+                        ssr={true}
+                        infinite={true}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        keyBoardControl={true}
+                        customTransition="all .8"
+                        transitionDuration={3000}
+                        containerClass="carousel-container"
+                        removeArrowOnDeviceType={["tablet", "mobile"]}
+                        itemClass="carousel-item-padding-40-px"
+                      >
+                        {category.contentList
+                          .slice(0, 12)
+                          .map((content, idx) => (
                             <div key={idx}>
                               <Link
                                 to={`/content/${category.category_name}/${content.id}`}
@@ -161,12 +194,12 @@ const Home = ({ apiData }) => {
                                   src={content.previewImage}
                                   className={
                                     category.category_layout === "square"
-                                      ? "slide-img1 p-3"
+                                      ? "slide-img1  image-with-shadow"
                                       : category.category_layout === "Rectangle"
-                                      ? "slide-img3 p-1"
+                                      ? "slide-img3 image-with-shadow"
                                       : category.category_layout ===
                                         "invert-Rectangle"
-                                      ? "slide-img2 p-1"
+                                      ? "slide-img2 image-with-shadow"
                                       : ""
                                   }
                                   alt={`content-${idx}`}
@@ -174,28 +207,27 @@ const Home = ({ apiData }) => {
                               </Link>
                             </div>
                           ))}
-                        </Carousel>
-                      )}
-                    </div>
-                  </section>
+                      </Carousel>
+                    )}
+                    </section>                  </>
                 ))}
 
               {/* Render plans if present */}
               {apiData.planList && apiData.planList.length > 0 && (
-                <section className="my-2 mx-2">
-                  <h1>Available Plans</h1>
-                  <div className="banner1 my-1">
-                    <div className="d-flex flex-wrap justify-content-around p-2">
+                <section className="pt-3">
+                  <h1 className="px-2"> Available Plans</h1>
+                  <div className="banner1 ">
+                    <div className="d-flex flex-wrap justify-content-between  align-items-center  m-2 p-1">
                       {apiData.planList.map((plan, idx) => (
                         <React.Fragment key={idx}>
                           <span>
-                            <i className="bi bi-record2-fill fs-1 text-danger"></i>
-                            <small className="text-white fw-1">
+                            <i className="bi bi-circle-fill  text-center text-danger border  border-4 border-white rounded-4  "></i>
+                            <strong className="text-white px-3 ">
                               {plan.plan_desc}
-                            </small>
-                            <small className="text-white fw-1 m-1">
+                            </strong>
+                            {/* <small className="text-white px-1 ">
                               {plan.validity}
-                            </small>
+                            </small> */}
                           </span>
                           <aside>
                             <Link
@@ -205,8 +237,8 @@ const Home = ({ apiData }) => {
                               {" "}
                               <strong>BUY</strong> <br />
                             </Link>
-                            <span className="text-danger">
-                              <i className="bi bi-volume-up-fill fs-2"></i>
+                            <span>
+                              <i className="bi bi-volume-up-fill fs-2 " style={{color:"#ab1e91"}}></i>
                             </span>
                           </aside>
                         </React.Fragment>

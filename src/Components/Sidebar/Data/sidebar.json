@@ -1,0 +1,67 @@
+[
+    {
+        "title": "Dashboard",
+        "path": "/",
+        "icon": "bi-house-fill",
+        "childrens": []
+    },
+    {
+        "title": "Home",
+        "path": "/Admin",
+        "icon": "bi-house-fill",
+        "childrens": []
+    },
+    {
+        "title": "Service Management",
+        "path": "/Admin",
+        "icon": "bi-camera-video",
+        "childrens": [
+            {
+                "title": "ServiceConfiguration",
+                "path": "/Admin",
+                "childrens": [
+                    {
+                        "title": "ServiceCreation",
+                        "path": "/servicecreation"
+                    },
+                    {
+                        "title": "ServiceEdit",
+                        "path": "/serviceedit"
+                    }
+                ]
+            },
+            {
+                "title": "ServicePlan Configuration",
+                "path": "/serviceplan"
+            }
+        ]
+    },
+    
+    {
+        "title": "User Management",
+        "path": "/",
+        "icon": "bi-file-earmark-image",
+        "childrens": []
+    },
+    {
+        "title": "Channel Management",
+        "path": "/usercreation",
+        "icon": "bi-quote",
+        "childrens": []
+    },
+    {
+        "title": "Promotion Management",
+        "path": "/AddPost",
+        "icon": "bi-newspaper",
+        "childrens": [
+            {
+                "title": "Post",
+                "path": "/AddPost"
+            },
+            {
+                "title": "User Creation",
+                "path": "/usercreation"
+            }
+        ]
+    }
+]
