@@ -30,9 +30,9 @@ const ArticlePage = ({ apiData }) => {
   }, [apiData, category, id]);
   console.log(articleData);
   return (
-    <div className="container-fluid">
+    <div className="container-fluid  vh-100">
       <div className="row">
-        <div className="col maincontainer">
+        <div className="col ">
           <div className="card art-card maincontainer">
             <section className="opacity-25">
               <figure>
@@ -43,23 +43,22 @@ const ArticlePage = ({ apiData }) => {
                 />
               </figure>
               <div className="d-flex justify-content-start m-1">
-                <figure className="m-1 ">
-                  <Link to={apiData.service_id}>
-                    <img
-                      src={apiData.service_logo}
-                      alt="banner"
-                      
-                      height="80"
-                      width="80"
-                      className="border border-dark  rounded p-1"
-                    />
-                  </Link>
-                </figure>
-                <small className="m-1">
+                  <figure className="m-1 ">
+                    <Link to={apiData.service_id} >
+                      <img
+                        src={apiData.service_logo}
+                        alt="banner"
+                        height="72"
+                        width="79"
+                        className="border border-dark  shadow rounded py-5  icons"
+                      />
+                    </Link>
+                  </figure>
+                  <small className="m-1">
                     <h1>{apiData.service_name}</h1>
                     <small>{apiData.remarks}</small>
                   </small>
-              </div>
+                </div>
             </section>
             {articleData.typeOfContent === "VDO" ? (
                 // <video controls >
@@ -96,7 +95,14 @@ const ArticlePage = ({ apiData }) => {
               <p>Music by: {articleData.musicBy}</p>
               <p>Produced by: {articleData.producedBy}</p>
               <div className="d-flex justify-content-center align-content-center">
-                <button className="btn btn-warning my-2">Buy Now</button>
+                {/* <button className="btn btn-warning my-3">Buy Now  
+                              <i className="bi bi-volume-up-fill  fw-2 p-2 h-100 w-100" style={{color:"#ab1e91"}}></i>
+                           </button>
+               */}
+               <button className="btn btn-warning my-3 d-flex align-items-center">
+    Buy Now
+    <i className="bi bi-volume-up-fill fw-2 ms-2" style={{ color: "#ab1e91", fontSize: "1.5rem" }}></i>
+</button>
               </div>
             </div>
           </div>

@@ -12,7 +12,7 @@ const Navbar = ({ toggle }) => {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light   d-flex justify-content-between "
-      style={{ backgroundColor: "rgb(0 0 0 / 96%)" }}
+      style={{ backgroundColor: "rgba(0,0,0,0.68)" }}
     >
       <div className="container-fluid d-flex justify-content-between">
         <div onClick={toggle} className="bar">

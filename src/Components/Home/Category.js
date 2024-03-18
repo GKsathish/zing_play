@@ -124,23 +124,27 @@ const Category = ({ apiData }) => {
   console.log(apiData, category, id);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid maincontainer vh-100">
       <div className="row">
-        <div className="col maincontainer">
+        <div className="col">
           <section>
             <figure>
               <img
                 src={apiData.purchase_service_logo}
                 alt="banner"
-                className="banner "
+                className="banner"
               />
             </figure>
           </section>
-          <div className="d-flex justify-content-start my-2">
-            <span className="h-40 w-40 ms-2">
+          <div className="d-flex justify-content-start my-1">
+            <span className="h-40 w-40 ms-1">
               <Link to={`/${apiData.service_id}`}>
-                {/* <i className="bi bi-arrow-left-circle-fill h-40 w-40 mx-2"></i> */}
-                <i className="bi bi-arrow-left text-dark fs-2 fw-bold mx-2 "></i>
+                {/* <i className="bi bi-arrow-left text-dark fs-1 fw-bold mx-2 "></i> */}
+                              <img
+                              className="arow1"
+                              src="/arrow.png"
+                              alt="next"
+                            />
               </Link>
             </span>
             <h1 className="my-2">{contentlist && contentlist.category_name}</h1>
@@ -148,25 +152,25 @@ const Category = ({ apiData }) => {
           {/* Display the category name */}
 
         
-          <div className="row m-2">
+          <div className="row m-1 overflow-x-hidden">
             {/* Map through contentList and render each item */}
             {contentlist &&
               contentlist.contentList &&
               contentlist.contentList.map((item) => (
-                <div className="col-6 col-md-4 col-lg-4" key={item.id}>
-                  <Link to={`/content/${contentlist.category_name}/${item.id}`}>
+                <div className="col-6 col-md-4 col-lg-4 baa " key={item.id} >
+                  <Link to={`/content/${contentlist.category_name}/${item.id}`} className="baa">
                     <img
                       src={item.previewImage}
                       alt={item.name}
                       className={
                         contentlist.category_layout === "square"
-                          ? "slide-img1c p-1"
+                          ? "slide-img1"
                           : contentlist.category_layout === "Rectangle"
-                          ? "slide-img3c p-1"
+                          ? "slide-img3"
                           : contentlist.category_layout === "invert-Rectangle"
-                          ? "slide-img2c p-1"
+                          ? "slide-img2"
                           : contentlist.category_layout === "border-square"
-                          ? "slide-img p-3"
+                          ? "slide-img"
                           : ""
                       }
                     />

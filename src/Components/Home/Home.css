@@ -35,16 +35,17 @@
    aspect-ratio: 16/9;
    border-radius: 0px 0px 20px 20px !important;
  
-  
+   padding:8px;
  }
 
  .slide-img1 {
    height: 100%;
    width: 100%;
    aspect-ratio: 1/1 !important;
-   /* border-radius: 8px !important; */
+    border-radius: 8px !important; 
+    padding: 8px;
 
-   margin: 2%;
+    margin: 2%; 
    object-fit: cover; /* Scale the image to cover the container */
 
  }
@@ -53,20 +54,20 @@
    height: 100%;
    width: 100%;
    aspect-ratio: 9/16 !important;
-   /* border-radius: 8px !important; */
+    border-radius: 8px !important; 
    margin: 2px;
    object-fit: cover; /* Scale the image to cover the container */
-
+   padding: 8px;
  }
 
  .slide-img3 {
    height: 100%;
    width: 100%;
    aspect-ratio: 16/9 !important;
-   /* border-radius: 8px !important; */
-   margin: 2px;
+   border-radius: 8px !important;
+    margin: 2px; 
    object-fit: cover; /* Scale the image to cover the container */
-
+   padding: 8px;
  }
 
  /*
@@ -77,19 +78,19 @@
      height: 100%;
      width: 100%;
      aspect-ratio: 1/1 !important;
-      border-radius: 0px 0px 20px 20px !important;
-      padding: 2px !important;
+      border-radius: 0px 0px 15px 15px !important;
+      padding: 4px;
       object-fit: cover; /* Scale the image to cover the container */
-
    }
 
    .slide-img1 {
      height: 100%;
      width: 100%;
      aspect-ratio: 1/1 !important;
-     /* border-radius: 20px !important; */
+     border-radius: 8px   !important;
      padding: 2px ;
      object-fit: cover; /* Scale the image to cover the container */
+     /* box-shadow: 0px 4px 8px rgba(182, 45, 45, 0.1); Adjust shadow values as needed */
 
    }
 
@@ -97,9 +98,9 @@
      height: 100%;
      width: 100%;
      aspect-ratio: 9/16 !important;
-     /* border-radius: 8px !important; */
+     border-radius: 8px !important;
     
-     padding: 2px ;
+     padding: 2px;
      object-fit: cover; /* Scale the image to cover the container */
 
 
@@ -109,7 +110,7 @@
      height: 100%;
      width: 100%;
      aspect-ratio: 16/9 !important;
-     /* border-radius: 8px !important; */
+     border-radius: 8px !important;
      padding: 2px ;
      object-fit: cover; /* Scale the image to cover the container */
 
@@ -141,11 +142,12 @@
 
  .awssld__bullets {
    position: absolute;
-   bottom: 2px !important;
+   bottom: -20px !important;
    width: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
+   display: none;
  }
 
  .slider {
@@ -159,4 +161,56 @@
 .arow{
   height:35px !important;
   width:35px !important;
+}
+.arow1{
+  transform: scaleX(-1);
+  height:35px !important;
+  width:35px !important;
+}
+
+
+/*  */
+/*  */
+/*  */
+/* height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1 !important;
+    border-radius: 0px 0px 20px 20px !important;
+    padding: 2px 4px 0px 4px !important;
+    object-fit: cover;
+}height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1 !important;
+    border-radius: 0px 0px 20px 20px !important;
+    padding: 2px 4px 0px 4px !important;
+    object-fit: cover;
+} */
+
+Link .baa{
+ 
+  border-radius: 20px !important;
+
+  /* box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.5), 
+  0px 2px 4px rgba(0,0,0,0.1),
+  0px 4px 8px rgba(0,0,0,0.1),
+  0px 8px 16px rgba(0,0,0,0.1) !important; */
+  /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+  height: 100% !important;
+  width: 100% !important;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.small, small {
+  font-size: -3.125em;
+  line-height: 1em;
+}
+
+.icons {
+  aspect-ratio: 1/1 !important;
+  padding: 6px 0px !important;
+  /* color: #A125FB !important; */
+  border: 2px solid #8a1aa3 !important; 
+  /* border: 2px solid #A125FB !important; */
+  
+
 }
