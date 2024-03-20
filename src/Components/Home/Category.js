@@ -5,109 +5,7 @@ import './Home.css';
 
 const Category = ({ apiData }) => {
   const { category, id } = useParams();
-  // Function to calculate padding-bottom based on aspect ratio
-  // const apiData = {
-  //   heading: "Suggested",
-  //   items: [
-  //     {
-  //       id: 1,
-  //       imageUrl: "./Images/att1.jpeg",
 
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 2,
-  //       imageUrl: "./Images/att2.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att3.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att3.jpeg",
-
-  //       aspectRatio: "1:1",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att3.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att6.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att3.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att5.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att4.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att3.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att5.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     {
-  //       id: 3,
-  //       imageUrl: "./Images/att6.jpeg",
-
-  //       aspectRatio: "16:9",
-  //       articleUrl: "/article",
-  //       type: "image",
-  //     },
-  //     // Add more objects as needed
-  //   ],
-  // };
 
   const [contentlist, setContentList] = useState([]);
 
@@ -124,9 +22,9 @@ const Category = ({ apiData }) => {
   console.log(apiData, category, id);
 
   return (
-    <div className="container-fluid maincontainer vh-100">
-      <div className="row">
-        <div className="col">
+    <div className="container-fluid  maincontainer">
+      <div className="row border-1  overflow-x-hidden">
+        <div className="col-12 ">
           <section>
             <figure>
               <img
@@ -136,7 +34,7 @@ const Category = ({ apiData }) => {
               />
             </figure>
           </section>
-          <div className="d-flex justify-content-start my-1">
+          <div className="d-flex justify-content-start my-1 content-containercategory overflow-x-hidden">
             <span className="h-40 w-40 ms-1">
               <Link to={`/${apiData.service_id}`}>
                 {/* <i className="bi bi-arrow-left text-dark fs-1 fw-bold mx-2 "></i> */}
