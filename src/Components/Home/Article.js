@@ -22,7 +22,7 @@ const [isPlaying, setIsPlaying] = useState(false);
         setShowPopup(false);
         setIsPlaying(false);
         clearTimeout(st);
-      }, 1500);
+      }, 10000);
      
     } else {
       // If already playing, pause the audio
@@ -155,7 +155,7 @@ const [isPlaying, setIsPlaying] = useState(false);
                         <span className="position-fixed translate-middle p-3 shadow  d-flex flex-column justify-content-flex-start align-items-start adio">
                           <span className="fw-semibold">BUY</span>
                           <small style={{ fontSize: "12px" }}>
-                            Please go to the nearest STOCHOS retailer to buy
+                            Please go to the nearest retailer to buy
                             this service
                           </small>
                         </span>
@@ -164,10 +164,10 @@ const [isPlaying, setIsPlaying] = useState(false);
                               <i className="bi bi-volume-up-fill  fw-2 p-2 h-100 w-100" style={{color:"#ab1e91"}}></i>
                            </button>
                */}
-                <button className="btn btn-warning my-3 d-flex align-items-center">
+                <button className="btn btn-warning my-3 d-flex align-items-center" onClick={togglePlayer}>
                   Buy Now
                   <i
-                  onClick={togglePlayer}  
+                
                     className="bi bi-volume-up-fill fw-2 ms-2"
                     style={{ color: "#ab1e91", fontSize: "1.5rem" }}
                   ></i>

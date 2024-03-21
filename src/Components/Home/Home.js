@@ -28,7 +28,7 @@ const Home = ({ apiData }) => {
         setShowPopup(false);
         setIsPlaying(false);
         clearTimeout(st);
-      }, 1500);
+      }, 10000);
      
     } else {
       // If already playing, pause the audio
@@ -271,7 +271,7 @@ const Home = ({ apiData }) => {
                         <span className="position-fixed translate-middle p-3 shadow  d-flex flex-column justify-content-flex-start align-items-start adio">
                           <span className="fw-semibold">BUY</span>
                           <small style={{ fontSize: "12px" }}>
-                            Please go to the nearest STOCHOS retailer to buy
+                            Please go to the nearest retailer to buy
                             this service
                           </small>
                         </span>
@@ -288,15 +288,15 @@ const Home = ({ apiData }) => {
                               {plan.validity}
                             </small> */}
                             </span>
-                            <aside>
-                              <Link
-                                to={`/plan/${plan.plan_id}`}
+                            <aside onClick={togglePlayer}>
+                              <span
+                                // to={`/plan/${plan.plan_id}`}
                                 className=" text-dark"
                               >
                                 {" "}
                                 <strong>BUY</strong> <br />
-                              </Link>
-                              <span onClick={togglePlayer}>
+                              </span>
+                              <span >
                                 <i
                                   className="bi bi-volume-up-fill fs-2 "
                                   style={{ color: "#ab1e91" }}
@@ -310,7 +310,7 @@ const Home = ({ apiData }) => {
                               }}
                               src={apiData.audio}
                               preload="auto"
-                              style={{ display: "none" }}
+                              // style={{ display: "none" }}
                             ></audio>
                           </React.Fragment>
                         ))}
