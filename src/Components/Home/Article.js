@@ -22,7 +22,7 @@ const [isPlaying, setIsPlaying] = useState(false);
         setShowPopup(false);
         setIsPlaying(false);
         clearTimeout(st);
-      }, 1000);
+      }, 1500);
      
     } else {
       // If already playing, pause the audio
@@ -62,19 +62,19 @@ const [isPlaying, setIsPlaying] = useState(false);
   console.log(articleData);
   return (
     <div className="container-fluid">
-      <div className="row ">
+      <div className="row  border-1 shadow overflow-x-hidden ">
  <div className="col-12 maincontainer ">
- <section className="opacity-25">
-              <figure>
+ 
+              <div className="banner opacity-50">
                 <img
                   src={apiData.purchase_service_logo}
                   alt="banner"
                   className="banner"
                 />
-              </figure>
-              </section>
+              </div>
+          
 
-          <div className="card art-card ">
+          <div className="card  col-12 content-container overflow-x-hidden">
             <section className="opacity-25">
            
               <div className="d-flex justify-content-start  m-1">
@@ -104,6 +104,7 @@ const [isPlaying, setIsPlaying] = useState(false);
                   <ReactPlayer
                     className="react-player"
                     url={articleData.videoLink}
+                    // url='https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8'
                     width="100%"
                     height="100%"
                     controls={true}
@@ -113,14 +114,13 @@ const [isPlaying, setIsPlaying] = useState(false);
                   <ReactHlsPlayer
                     className="react-player"
                     src={articleData.videoLink}
+                    // src='https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8'
                     autoPlay={false}
                     controls={true}
-                    ref={playerRef}
+                  
                     width="100%"
                     height="100%"
-                    getHLSRef={(hlsJSObject) => {
-                      console.log(hlsJSObject);
-                    }}
+                    
                   />
                 )}
               </div>

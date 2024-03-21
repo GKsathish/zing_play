@@ -28,7 +28,7 @@ const Home = ({ apiData }) => {
         setShowPopup(false);
         setIsPlaying(false);
         clearTimeout(st);
-      }, 1000);
+      }, 1500);
      
     } else {
       // If already playing, pause the audio
@@ -117,7 +117,7 @@ const Home = ({ apiData }) => {
 
   // Render the component
   return (
-    <div className="container-fluid  ">
+    <div className="container-fluid">
       <div className="row bg-light border-1 shadow overflow-x-hidden">
         <div className="col-12 maincontainer">
           {/* Banner */}
@@ -215,10 +215,11 @@ const Home = ({ apiData }) => {
                             swipeable={true}
                             draggable={true}
                             // responsive={responsive}
+                            slidesToScroll={1}
                             responsive={getCategoryResponsive(category)} // Apply different responsive settings based on category
                             ssr={true}
                             infinite={true}
-                            autoPlay={true}
+                            autoPlay={false}
                             autoPlaySpeed={3000}
                             keyBoardControl={true}
                             customTransition="all .8"
@@ -323,212 +324,7 @@ const Home = ({ apiData }) => {
         </div>
       </div>
     </div>
-  //    <div className="container-fluid ">
-  //    <div className="row bg-light border-1 shadow overflow-x-hidden">
-  //      <div className="col-12 maincontainer">
-  //        {/* Banner */}
-  //        <div className="banner">
-  //          <img
-  //            src={apiData.purchase_service_logo}
-  //            alt="banner"
-  //            className="banner"
-  //          />
-  //        </div>
-  //        <div className="col-12 content-container overflow-x-hidden">
-  //          {/* Check if apiData has been populated */}
-  //          {Object.keys(apiData).length > 0 && (
-  //            <>
-  //              <section className="mb-4">
-  //                <div className="d-flex justify-content-start m-1">
-  //                  <figure className="m-1 ">
-  //                    <Link to={apiData.service_id}>
-  //                      <img
-  //                        src={apiData.service_logo}
-  //                        alt="banner"
-  //                        height="80"
-  //                        width="80"
-  //                        className="border   shadow rounded   icons"
-  //                      />
-  //                    </Link>
-  //                  </figure>
-  //                  <small className="m-1">
-  //                    <h1>{apiData.service_name}</h1>
-  //                    <small>{apiData.remarks}</small>
-  //                  </small>
-  //                </div>
-  //              </section>
-
-  //              {/* Render categories if present */}
-  //              {apiData.categoryList &&
-  //                apiData.categoryList.map((category, index) => (
-  //                  <>
-  //                    {/* <section key={index}  className="mx-2"> */}
-  //                    <small
-  //                      key={index}
-  //                      className="d-flex  mx-2 justify-content-between align-items-center"
-  //                    >
-  //                      {category.category_layout === "border-square" && (
-  //                        <h1 className="text-center ps-1">
-  //                          {category.category_name}
-  //                        </h1>
-  //                      )}
-  //                    </small>
-  //                    {category.category_layout === "border-square" &&
-  //                      category.contentList.length > 0 && (
-  //                        <Slider {...settings}>
-  //                          {category.contentList
-  //                            .slice(0, 12)
-  //                            .map((item, index) => (
-  //                              // <div key={item.id} className="mb-0" >
-  //                              <Link
-  //                                key={item.id}
-  //                                to={`/content/${category.category_name}/${item.id}`}
-  //                                className="mx-1"
-  //                              >
-  //                                <img
-  //                                  src={item.previewImage}
-  //                                  className="slide-img image-with-shadow"
-  //                                  alt={item.name}
-  //                                />
-  //                              </Link>
-  //                              // </div>
-  //                            ))}
-  //                        </Slider>
-  //                      )}
-  //                    {/* </section> */}
-  //                    <section className="mb-3 mx-1">
-  //                      <span className="d-flex justify-content-between align-items-center mx-2">
-  //                        {category.category_layout !== "border-square" && (
-  //                          <>
-  //                            <h1 className="text-center mt-2">
-  //                              {category.category_name}
-  //                            </h1>
-  //                            <Link
-  //                              to={`/category/${category.category_name}/${category.category_id}`}
-  //                            >
-  //                              {/* <i className="bi bi-arrow-right text-dark fs-2 fw-bold"></i> */}
-  //                              <img
-  //                                className="arow"
-  //                                src="./arrow.png"
-  //                                alt="next"
-  //                              />
-  //                            </Link>
-  //                          </>
-  //                        )}
-  //                      </span>
-  //                      {category.category_layout !== "border-square" && (
-  //                        <Carousel
-  //                          swipeable={true}
-  //                          draggable={true}
-  //                          // responsive={responsive}
-  //                          responsive={getCategoryResponsive(category)} // Apply different responsive settings based on category
-  //                          ssr={true}
-  //                          infinite={true}
-  //                          autoPlay={true}
-  //                          autoPlaySpeed={3000}
-  //                          keyBoardControl={true}
-  //                          customTransition="all .8"
-  //                          transitionDuration={3000}
-  //                          containerClass="carousel-container"
-  //                          removeArrowOnDeviceType={["tablet", "mobile"]}
-  //                          itemClass="carousel-item-padding-40-px"
-  //                        >
-  //                          {category.contentList
-  //                            .slice(0, 12)
-  //                            .map((content, idx) => (
-  //                              // <div key={idx}  className="">
-  //                              <Link
-  //                                key={idx}
-  //                                to={`/content/${category.category_name}/${content.id}`}
-  //                                className="shadow-sm shadow-lg shadows baa"
-  //                              >
-  //                                <img
-  //                                  src={content.previewImage}
-  //                                  className={
-  //                                    category.category_layout === "square"
-  //                                      ? "slide-img1 "
-  //                                      : category.category_layout ===
-  //                                        "Rectangle"
-  //                                      ? "slide-img3 "
-  //                                      : category.category_layout ===
-  //                                        "invert-Rectangle"
-  //                                      ? "slide-img2 "
-  //                                      : ""
-  //                                  }
-  //                                  alt={`content-${idx}`}
-  //                                />
-  //                              </Link>
-  //                              // </div>
-  //                            ))}
-  //                        </Carousel>
-  //                      )}
-  //                    </section>
-  //                  </>
-  //                ))}
-
-  //              {/* Render plans if present */}
-
-  //              {apiData.planList && apiData.planList.length > 0 && (
-  //                <section className="my-4 mx-2">
-  //                  <h1 className="px-2"> Available Plans</h1>
-  //                  <div className="banner1 ">
-  //                    {showPopup && (
-  //                      <span className="position-fixed translate-middle p-3 shadow  d-flex flex-column justify-content-flex-start align-items-start adio">
-  //                        <span className="fw-semibold">BUY</span>
-  //                        <small style={{ fontSize: "12px" }}>
-  //                          Please go to the nearest STOCHOS retailer to buy
-  //                          this service
-  //                        </small>
-  //                      </span>
-  //                    )}
-  //                    <div className="d-flex flex-wrap justify-content-between  align-items-center  m-2 p-1">
-  //                      {apiData.planList.map((plan, idx) => (
-  //                        <React.Fragment key={idx}>
-  //                          <span>
-  //                            <i className="bi bi-circle-fill  text-center text-danger border  border-4 border-white rounded-4  "></i>
-  //                            <strong className="text-white px-3 ">
-  //                              {plan.plan_desc}
-  //                            </strong>
-  //                            {/* <small className="text-white px-1 ">
-  //                            {plan.validity}
-  //                          </small> */}
-  //                          </span>
-  //                          <aside>
-  //                            <Link
-  //                              to={`/plan/${plan.plan_id}`}
-  //                              className=" text-dark"
-  //                            >
-  //                              {" "}
-  //                              <strong>BUY</strong> <br />
-  //                            </Link>
-  //                            <span onClick={togglePlayer}>
-  //                              <i
-  //                                className="bi bi-volume-up-fill fs-2 "
-  //                                style={{ color: "#ab1e91" }}
-  //                              ></i>
-  //                            </span>
-  //                          </aside>
-
-  //                          <audio
-  //                            ref={(element) => {
-  //                              audio = element;
-  //                            }}
-  //                            src={apiData.audio}
-  //                            preload="auto"
-  //                            style={{ display: "none" }}
-  //                          ></audio>
-  //                        </React.Fragment>
-  //                      ))}
-  //                    </div>
-  //                  </div>
-  //                </section>
-  //              )}
-  //            </>
-  //          )}
-  //        </div>
-  //      </div>
-  //    </div>
-  //  </div>
+    
   );
 };
 
